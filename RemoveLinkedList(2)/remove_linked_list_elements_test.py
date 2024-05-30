@@ -27,7 +27,7 @@ class TestRemoveNodesWithCount(unittest.TestCase):
     # Remove all occurrences of a value
     target_counts = [(7, 2), (6, 6)]
     values = [7, 7, 5, 4, 3, 5, 6, 7, 6, 6, 6, 6, 6]
-    expected_list = [5, 4, 7 , 3]
+    expected_list = [5, 4, 3, 5, 7]
     head = self.create_linked_list(values)
     result = Solution().remove_nodes_with_count(head, target_counts)  # Don't pass head as argument to constructor
     self.assertEqual(self.convert_linked_list_to_array(result), expected_list)
@@ -45,7 +45,7 @@ class TestRemoveNodesWithCount(unittest.TestCase):
     # Remove zero count shouldn't affect the list
     target_counts = [(7, 0), (6, 2), (5, 1)]
     values = [7, 7, 5, 4, 3, 5, 6, 7, 6, 6, 6, 6, 6]
-    expected_list = [7, 7, 5, 4, 3, 5, 6, 7, 6, 6]  # No change for 7 (count 0)
+    expected_list = [7, 7, 4, 3, 5, 7, 6, 6, 6, 6]  # No change for 7 (count 0)
     head = self.create_linked_list(values)
     result = Solution().remove_nodes_with_count(head, target_counts)  # Don't pass head as argument to constructor
     self.assertEqual(self.convert_linked_list_to_array(result), expected_list)
@@ -54,7 +54,7 @@ class TestRemoveNodesWithCount(unittest.TestCase):
     # Try removing more than existing nodes
     target_counts = [(7, 3), (6, 10), (5, 2)]
     values = [7, 7, 5, 4, 3, 5, 6, 7, 6, 6, 6, 6, 6]
-    expected_list = [4, 3, 5, 7, 6, 6]  # Remove at most the existing count
+    expected_list = [4, 3]  # Remove at most the existing count
     head = self.create_linked_list(values)
     result = Solution().remove_nodes_with_count(head, target_counts)  # Don't pass head as argument to constructor
     self.assertEqual(self.convert_linked_list_to_array(result), expected_list)
