@@ -1,7 +1,4 @@
-from list_node import ListNode  # Import ListNode class (assuming it's in a separate file)
-
-class Solution:
-    def remove_nodes_with_count(self, head, target_counts):
+def remove_nodes_with_count(self, head, target_counts):
         """
         Removes nodes from the linked list based on target values and desired removal counts.
 

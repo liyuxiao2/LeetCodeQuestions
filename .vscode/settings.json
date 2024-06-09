@@ -2,7 +2,7 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        "./RemoveLinkedList(2)",
+        "./removeLinkedListFOO",
         "-p",
         "*test.py"
     ],
