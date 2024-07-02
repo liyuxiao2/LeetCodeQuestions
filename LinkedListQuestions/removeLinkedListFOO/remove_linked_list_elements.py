@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
-from list_node import ListNode
-=======
 from listnode import ListNode  # Import ListNode class (assuming it's in a separate file)
-
->>>>>>> Stashed changes
 class Solution:
     def remove_nodes_with_count(self, head, target_counts):
         """
