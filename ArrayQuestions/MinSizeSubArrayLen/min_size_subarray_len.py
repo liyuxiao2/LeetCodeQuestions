@@ -38,23 +38,23 @@ class Solution(object):
         :rtype: int
         """
 
-        first, second, sums = 0, 0, 0
+        front_ptr, tail_ptr, sums = 0, 0, 0
 
         #set min length to infinity
-        min_length = float("inf")
+        min_length = int("inf")
 
         #first while loop, moves the first pointer to the right
-        while(first < len(nums)):
-            sums += nums[first]
+        while(front_ptr < len(nums)):
+            sums += nums[front_ptr]
 
             if(sums >= target):
                 #second while loop, increment the second pointer to the right until sum < target
                 while(sums >= target):
-                    sums -= nums[second]
+                    sums -= nums[tail_ptr]
                     #compares min length, with j-1+1, returns min
-                    min_length = min(first-second+1, min_length)
-                    second += 1
-            first += 1
+                    min_length = min(front_ptr-tail_ptr+1, min_length)
+                    tail_ptr += 1
+            front_ptr += 1
         
 
-        return min_length if min_length != float("inf") else 0
+        return min_length if min_length != int("inf") else 0
