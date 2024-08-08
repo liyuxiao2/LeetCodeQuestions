@@ -15,22 +15,22 @@ class Solution {
             int sum = (l1 != null ? l1.val: 0) + (l2 != null ? l2.val: 0) + carry;
 
             if(sum > 10){
-                cur.next = new ListNode(sum%10);
+                cur.setNext(new ListNode(sum%10));
                 //will always be less than 20 but greater than 10
                 carry = 1;
             }
             else{
-                cur.next = new ListNode(sum);
+                cur.setNext(new ListNode(sum));
             }
             
             //check if were at the end of the linked list
-            if(l1 != null) l1 = l1.next;
-            if(l2 != null) l2 = l2.next;
+            if(l1 != null) l1 = l1.getNext();
+            if(l2 != null) l2 = l2.getNext();
             
-            cur = cur.next;
+            cur = cur.getNext();
         }
         
         //return the head
-        return dummy.next;
+        return dummy.getNext();
     }
 }
