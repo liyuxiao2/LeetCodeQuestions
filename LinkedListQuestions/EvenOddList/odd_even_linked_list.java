@@ -1,3 +1,5 @@
+import LinkedListQuestions.MergeTwoSortedList.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -14,18 +16,18 @@ class Solution {
             return head;
         }
         
-        ListNode odd = head,  even = head.next, evenHead = even;
+        ListNode odd = head,  even = head.getNext(), evenHead = even;
 
         
-        while(even != null && even.next != null){
-            odd.next = odd.next.next;
-            even.next = even.next.next;
-            even = even.next;
-            odd = odd.next;
+        while(even != null && even.getNext() != null){
+            odd.setNext(odd.getNext().getNext());
+            even.setNext(even.getNext().getNext());
+            even = even.getNext();
+            odd = odd.getNext();
         }
 
         
-        odd.next = evenHead;
+        odd.setNext(evenHead);
         return head;
         
     }
