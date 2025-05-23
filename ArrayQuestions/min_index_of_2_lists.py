@@ -1,4 +1,4 @@
-'''
+"""
 Given two arrays of strings list1 and list2, find the common strings with the least index sum.
 
 A common string is a string that appeared in both list1 and list2.
@@ -7,7 +7,7 @@ A common string with the least index sum is a common string such that if it appe
 
 Return all the common strings with the least index sum. Return the answer in any order.
 
- 
+
 
 Example 1:
 
@@ -28,7 +28,7 @@ Explanation: There are three common strings:
 "sad" with index sum = (1 + 0) = 1.
 "good" with index sum = (2 + 2) = 4.
 The strings with the least index sum are "sad" and "happy".
- 
+
 
 Constraints:
 
@@ -40,7 +40,8 @@ All the strings of list2 are unique.
 There is at least a common string between list1 and list2.
 
 
-'''
+"""
+
 
 class Solution(object):
     def find_min_index_sum(self, list1, list2):
@@ -51,36 +52,29 @@ class Solution(object):
         """
         count = {}
         result = []
-        
-        
-        #maximum index length it can be since the boundaries for both lists are 1000 and 1000
+
+        # maximum index length it can be since the boundaries for both lists are 1000 and 1000
         min_sum = 2000
-        
-        
-        #store all the values in list1 into the dictionary
+
+        # store all the values in list1 into the dictionary
         for i in range(len(list1)):
             count[list1[i]] = i
-        
-        
-        #enumerate over list 2
-        for i, val in enumerate (list2):
-            
-            #check if val is in the dict
-            if(val in count):
-                
-                #calculates the index_sum between list2 and list1
+
+        # enumerate over list 2
+        for i, val in enumerate(list2):
+
+            # check if val is in the dict
+            if val in count:
+
+                # calculates the index_sum between list2 and list1
                 total_index_sum = i + count[val]
-                
-                #if greater than the current minimum, replace the result with the new val
-                if(total_index_sum < min_sum):
+
+                # if greater than the current minimum, replace the result with the new val
+                if total_index_sum < min_sum:
                     min_sum = total_index_sum
                     result = [val]
-                #else if its equal, add it to the result
-                elif(total_index_sum == min_sum):
+                # else if its equal, add it to the result
+                elif total_index_sum == min_sum:
                     result.append(val)
-        
-        
+
         return result
-        
-            
-        
