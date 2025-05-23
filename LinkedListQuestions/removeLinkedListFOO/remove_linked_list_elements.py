@@ -1,4 +1,8 @@
-from listnode import ListNode  # Import ListNode class (assuming it's in a separate file)
+from listnode import (
+    ListNode,
+)  # Import ListNode class (assuming it's in a separate file)
+
+
 class Solution:
     def remove_nodes_with_count(self, head, target_counts):
         """
@@ -11,10 +15,10 @@ class Solution:
         Returns:
             The modified head node of the linked list.
         """
-        
-        #creates a dictionary storing key, value pairs
+
+        # creates a dictionary storing key, value pairs
         target_dict = dict(target_counts)
-        
+
         # Dummy node to handle edge cases easily
         dummy = ListNode(0)
         dummy.next = head

@@ -1,7 +1,7 @@
-'''
+"""
 Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the maximum number of nested parentheses.
 
- 
+
 
 Example 1:
 
@@ -29,14 +29,14 @@ Input: s = "()(())((()()))"
 
 Output: 3
 
- 
+
 
 Constraints:
 
 1 <= s.length <= 100
 s consists of digits 0-9 and characters '+', '-', '*', '/', '(', and ')'.
 It is guaranteed that parentheses expression s is a VPS.
-'''
+"""
 
 
 class Solution(object):
@@ -56,5 +56,5 @@ class Solution(object):
                 stack.pop()
             if max_count < len(stack):
                 max_count = len(stack)
-        
+
         return max_count
