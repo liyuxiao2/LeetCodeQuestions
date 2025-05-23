@@ -1,4 +1,4 @@
-'''
+"""
 There are n availabe seats and n students standing in a room. You are given an array seats of length n, where seats[i] is the position of the ith seat. You are also given the array students of length n, where students[j] is the position of the jth student.
 
 You may perform the following move any number of times:
@@ -8,7 +8,7 @@ Return the minimum number of moves required to move each student to a seat such 
 
 Note that there may be multiple seats or students in the same position at the beginning.
 
- 
+
 
 Example 1:
 
@@ -40,24 +40,23 @@ The students are moved as follows:
 - The third student is not moved.
 - The fourth student is not moved.
 In total, 1 + 3 + 0 + 0 = 4 moves were used.
- 
+
 
 Constraints:
 
 n == seats.length == students.length
 1 <= n <= 100
 1 <= seats[i], students[j] <= 100
-'''
+"""
 
-
-
-
-'''
+"""
 sort seats and students in ascending order, find the difference between student[i] and seats[i], add to total moves
 
 Return the total moves at the end
 
-'''
+"""
+
+
 class Solution(object):
     def minMovesToSeat(self, seats, students):
         """
@@ -71,6 +70,6 @@ class Solution(object):
         count = 0
 
         for i in range(len(students)):
-            count += abs(students[i]-seats[i])
-        
+            count += abs(students[i] - seats[i])
+
         return count
